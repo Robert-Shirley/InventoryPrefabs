@@ -1,0 +1,99 @@
+.title{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 20px;
+font-size: xx-large;
+}
+
+
+table {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: #4a4a4d;
+    font: 18px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-right: 0px solid #cecfd5;
+    border-left: 0px solid #cecfd5;
+
+  }
+  .blankRow
+  {
+      padding: 20px;
+      border-bottom: 0px solid #cecfd5;
+      border-right: 0px solid #cecfd5;
+      border-left: 0px solid #cecfd5;
+      border-top: 0px solid #cecfd5;
+  }
+ 
+  th{
+    padding: 10px 15px;
+    vertical-align: middle;
+  }
+  td {
+       border-top: 1px solid #cecfd5;
+       border-left: 1px solid #cecfd5;
+    padding: 10px 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid #cecfd5;
+    border-right: 1px solid #cecfd5;
+  }
+  thead {
+    background: #395870;
+    background: linear-gradient(#49708f, #293f50);
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  th:first-child {
+    border-top-left-radius: 5px;
+    text-align: center;
+  }
+  th:last-child {
+    border-top-right-radius: 5px;
+  }
+  tr:nth-child(even) {
+    background: #f0f0f2;
+  }
+  
+  
+  .productName {
+    color: #395870;
+    display: block;
+    font-size: 18px;
+    text-align: center;
+    
+  }
+  .text-offset {
+    color: #4a4a4e;
+    display: block;
+    font-size: 12px;
+    text-align: center;
+  }
+  .item-stock,
+  .item-qty {
+    text-align: center;
+  }
+  .item-price {
+    text-align: center;
+  }
+  .item-multiple {
+    display: block;
+  }
+  tfoot {
+    text-align: right;
+  }
+  tfoot tr:last-child {
+    background: #f0f0f2;
+    color: #395870;
+    font-weight: bold;
+  }
+  tr:last-child td:first-child {
+    border-bottom-left-radius: 5px;
+  }
+  tr:last-child td:last-child {
+    border-bottom-right-radius: 5px;
+  }
+  
