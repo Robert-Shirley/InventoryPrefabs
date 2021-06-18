@@ -1,9 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url('background.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+}
+  
+.column {
+  float:left;
+  width: 50%;
+  padding: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media screen and (max-width: 1560px) {
+  .column {
+   padding-left: 10vw;
+    width: 80%;
+  }
+  table
+  {
+    width: auto;
+  }
+}
+
+
 .title{
     display: flex;
     justify-content: center;
     align-content: center;
     margin-top: 20px;
-font-size: xx-large;
+font-size: 60px;
+border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+
 }
 
 
@@ -11,36 +57,29 @@ table {
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 30px;
     border-collapse: separate;
     border-spacing: 0;
     color: #4a4a4d;
-    font: 18px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 16px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
     border-right: 0px solid #cecfd5;
     border-left: 0px solid #cecfd5;
 
   }
-  .blankRow
-  {
-      padding: 20px;
-      border-bottom: 0px solid #cecfd5;
-      border-right: 0px solid #cecfd5;
-      border-left: 0px solid #cecfd5;
-      border-top: 0px solid #cecfd5;
-  }
  
   th{
-    padding: 10px 15px;
+    padding: 8px 10px;
     vertical-align: middle;
   }
   td {
-       border-top: 1px solid #cecfd5;
-       border-left: 1px solid #cecfd5;
-    padding: 10px 15px;
+       border-top: .1px solid #cecfd5;
+       border-left: .1px solid #cecfd5;
+    padding: 1px 2px;
     vertical-align: middle;
-    border-bottom: 1px solid #cecfd5;
-    border-right: 1px solid #cecfd5;
+    border-bottom: .1px solid #cecfd5;
+    border-right: .1px solid #cecfd5;
   }
-  thead {
+  thead .tabHead {
     background: #395870;
     background: linear-gradient(#49708f, #293f50);
     color: #fff;
@@ -50,12 +89,16 @@ table {
   th:first-child {
     border-top-left-radius: 5px;
     text-align: center;
+    
   }
   th:last-child {
     border-top-right-radius: 5px;
   }
+  tr:nth-child(odd) {
+    background: #ffffff;
+  }
   tr:nth-child(even) {
-    background: #f0f0f2;
+    background: #f3f3f3;
   }
   
   
@@ -95,5 +138,6 @@ table {
   }
   tr:last-child td:last-child {
     border-bottom-right-radius: 5px;
+    
   }
   

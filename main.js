@@ -1,9 +1,12 @@
 
 
 
-let prefabArray = ['26X42', '26X48','26X54'];
+let prefabArray = ['26X42', '26X48','26X54','26X58','26X66','26X70','26X78','26X82','38X54','38X58','38X66','38X70','38X78','38X82'];
 let prefabObjects = [];
+//table = steel table
 let table = document.getElementById('table');
+//table2 = clear table
+let table2 = document.getElementById('table2');
 
 function Prefabs(size,style,inv,open,confirmed,allocated,available,minimum,maximum)
 {
@@ -26,8 +29,7 @@ for(let i = 0; i < prefabArray.length; i++)
     prefabObjects.push(newPrefab);
 }
 
-let blank = new Prefabs('','','','','','','','','');
-prefabObjects.push(blank);
+
 
 for(let i = 0; i < prefabArray.length; i++)
 {
@@ -44,7 +46,7 @@ function displayTable()
 for(let i = 0; i < prefabObjects.length; i++)
 {
     let tableRow = document.createElement('tr');
-    if(prefabObjects[i].size != ''){
+   
     let name = document.createElement('td');
     name.classList.add('item-qty');
     let size = document.createElement('strong');
@@ -74,21 +76,19 @@ for(let i = 0; i < prefabObjects.length; i++)
     minimum.classList.add('item-qty');
     maximum.textContent = prefabObjects[i].maximum;
     maximum.classList.add('item-qty');
-
+    if(prefabObjects[i].size != '' && prefabObjects[i].style === 'Steel'){
     table.appendChild(tableRow);
-    
     name.appendChild(size);
     name.appendChild(style);
     tableRow.append(name,onHand,open,confirmed,allocated,available,minimum,maximum);
-   
     }
-    else
-    {
-        table.appendChild(tableRow);
-        let blankrow = document.createElement('td');
-        blankrow.classList.add('blankRow');
-        tableRow.appendChild(blankrow);
-    }
+    else if(prefabObjects[i].size != '' && prefabObjects[i].style === 'Clear'){
+        table2.appendChild(tableRow);
+        name.appendChild(size);
+        name.appendChild(style);
+        tableRow.append(name,onHand,open,confirmed,allocated,available,minimum,maximum);
+        }
+    
 }
 
 }
@@ -106,11 +106,11 @@ function updateOnHand(size,style,onHand){
 }
 
 function clearTable(){
-    let tableHeaderRowCount = 1;
-    let table = document.getElementById('table');
+    
     let rowCount = table.rows.length;
 for (let i = 1; i < rowCount; i++) {
-    table.deleteRow(tableHeaderRowCount);
+    table.deleteRow(1);
+    table2.deleteRow(1);
 }
 }
 
@@ -119,11 +119,12 @@ generateProducts();
 //console.log(prefabObjects);
 displayTable();
 
-updateOnHand('26X54','Clear',15);
+updateOnHand('38X54','Steel',45);
 
 function hide()
 {
   let title = document.getElementById('title');
     table.style.display='none';
+    table2.style.display='none';
     title.style.display='none';
 }
