@@ -1,5 +1,25 @@
 {
   "dependencies": {
-    "jshint": "^2.13.0"
-  }
+    "jshint": "^2.13.0",
+    "webpack": "^5.39.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "name": "inventoryprefabs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elite-robz/InventoryPrefabs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elite-robz/InventoryPrefabs/issues"
+  },
+  "homepage": "https://github.com/elite-robz/InventoryPrefabs#readme",
+  "description": ""
 }
