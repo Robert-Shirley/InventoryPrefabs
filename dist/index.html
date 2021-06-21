@@ -12,10 +12,12 @@
     <title>Inventory</title>
 </head>
 <body>
-    <button onclick='hide()' id='test' style="width: 20px; height: 20px;"></button>
+    <button onclick='updateOnHand("38X54", "Steel", 10)' id='test' style="width: 20px; height: 20px;"></button>
+
+
     <h1 id='title' class="title">UWWC Inventory</h1>
     <div class="row">
-    <table id="table" class="column">
+    <table id="UWWC Steel Inventory" class="column">
         <thead>
           <tr>
             <th scope="col" class="tabHead">Product</th>
@@ -35,7 +37,7 @@
          
         </tfoot>
       </table>
-      <table id="table2" class="column">
+      <table id="UWWC Clear Inventory" class="column">
         <thead>
           <tr>
             <th scope="col" class="tabHead">Product</th>
@@ -56,6 +58,9 @@
         </tfoot>
       </table>
     </div>
+
+    
+
 
 </body>
 </html>

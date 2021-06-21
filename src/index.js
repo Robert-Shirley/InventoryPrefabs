@@ -1,4 +1,7 @@
-import test from "./uwwcCustomers";
+import test from "./uwwcOpenCustomers";
+
+
+
 
 let prefabArray = [
   "26X42",
@@ -17,10 +20,14 @@ let prefabArray = [
   "38X82",
 ];
 let prefabObjects = [];
+
+
 //table = steel table
-let table = document.getElementById("table");
+let table = document.getElementById("UWWC Steel Inventory");
 //table2 = clear table
-let table2 = document.getElementById("table2");
+let table2 = document.getElementById("UWWC Clear Inventory");
+
+
 
 function Prefabs(
   size,
@@ -127,9 +134,11 @@ function displayTable() {
 function updateOnHand(size, style, onHand) {
   for (let i = 0; i < prefabObjects.length; i++) {
     if (prefabObjects[i].size === size && prefabObjects[i].style === style) {
-      prefabObjects[i].inv = onHand;
+      prefabObjects[i].inv += onHand;
     }
+    
   }
+  //saveLocal();
   clearTable();
   displayTable();
 }
@@ -142,11 +151,14 @@ function clearTable() {
   }
 }
 
+
+
 generateProducts();
 //console.log(prefabObjects);
+//restoreLocal();
 displayTable();
 
-updateOnHand("38X54", "Steel", 50);
+//updateOnHand("38X54", "Steel", 42);
 
 function hide() {
   let title = document.getElementById("title");
@@ -156,3 +168,18 @@ function hide() {
 }
 
 window.hide = hide;
+
+window.updateOnHand = updateOnHand;
+
+
+//function saveLocal(){
+//localStorage.setItem('prefabObjects',JSON.stringify(prefabObjects));
+//}
+//
+//function restoreLocal()
+//{
+//   prefabObjects = JSON.parse(localStorage.getItem("prefabObjects"));
+//   if (prefabObjects === null) 
+//   prefabObjects = []
+//}
+

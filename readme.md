@@ -12,4 +12,4 @@ Denver Orders
 
 Transparency
 
-Firebase
+Local Storage
