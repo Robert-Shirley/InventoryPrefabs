@@ -1,4 +1,4 @@
-import test from "./uwwcOpenCustomers";
+import display_UWWC_open_customers from "./uwwcOpenCustomers";
 
 
 
@@ -183,3 +183,10 @@ window.updateOnHand = updateOnHand;
 //   prefabObjects = []
 //}
 
+function uwwcOpen()
+{
+    hide()
+    display_UWWC_open_customers()
+
+}
+window.uwwcOpen = uwwcOpen;

@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="uwwcOC.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
    <script defer src = "main.js"></script>
     <title>Inventory</title>
 </head>
 <body>
-    <button onclick='updateOnHand("38X54", "Steel", 10)' id='test' style="width: 20px; height: 20px;"></button>
+    <button onclick='uwwcOpen()' id='test' style="width: 20px; height: 20px;"></button>
 
 
-    <h1 id='title' class="title">UWWC Inventory</h1>
-    <div class="row">
-    <table id="UWWC Steel Inventory" class="column">
+    <h1 id='title' class="title" style="display: none;">UWWC Inventory</h1>
+    <div class="row" style="display: none;">
+    <table id="UWWC Steel Inventory" class="column" ">
         <thead>
           <tr>
             <th scope="col" class="tabHead">Product</th>
@@ -59,7 +60,25 @@
       </table>
     </div>
 
-    
+    <div id ="UWWCOpenCustomers">
+     
+      <table class="openCust">
+        <ttitle class="title">UWWC Open Customer List</ttitle>
+        <thead>
+          <tr>
+            <th scope="col" class="CustName">Name</th>
+            <th scope="col"class="OrderStyle">Style</th>
+            <th scope="col"class="OrderQTY">Quantity</th>
+            <th scope="col"class="OrderDate">Order Date</th>
+           </tr>
+        </thead>
+        <tbody>
+        
+          </tbody>
+          </table>
+
+
+    </div>  
 
 
 </body>

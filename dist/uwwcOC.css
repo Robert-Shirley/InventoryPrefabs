@@ -1,0 +1,50 @@
+#UWWCOpenCustomers
+{
+   display: block;
+
+}
+
+.openCust
+{
+  float:center;
+  width: 70%;
+  padding: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.CustName{
+background: #395870;
+background: linear-gradient(#49708f, #293f50);
+color: #fff;
+font-size: 15px;
+text-transform: uppercase;
+width: 40%;
+}
+
+.OrderStyle{
+    background: #395870;
+    background: linear-gradient(#49708f, #293f50);
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    width: 20%;
+    }
+
+.OrderQTY{
+    background: #395870;
+    background: linear-gradient(#49708f, #293f50);
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    width: 20%;
+    }
+
+.OrderDate{
+    background: #395870;
+    background: linear-gradient(#49708f, #293f50);
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    width: 20%;
+    }
