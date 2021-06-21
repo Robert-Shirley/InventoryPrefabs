@@ -4,20 +4,20 @@ import display_UWWC_open_customers from "./uwwcOpenCustomers";
 
 
 let prefabArray = [
-  "26X42",
-  "26X48",
-  "26X54",
-  "26X58",
-  "26X66",
-  "26X70",
-  "26X78",
-  "26X82",
-  "38X54",
-  "38X58",
-  "38X66",
-  "38X70",
-  "38X78",
-  "38X82",
+  "26 x 42",
+  "26 x 48",
+  "26 x 54",
+  "26 x 58",
+  "26 x 66",
+  "26 x 70",
+  "26 x 78",
+  "26 x 82",
+  "38 x 54",
+  "38 x 58",
+  "38 x 66",
+  "38 x 70",
+  "38 x 78",
+  "38 x 82",
 ];
 let prefabObjects = [];
 
@@ -170,6 +170,7 @@ function hide() {
 window.hide = hide;
 
 window.updateOnHand = updateOnHand;
+
 
 
 //function saveLocal(){

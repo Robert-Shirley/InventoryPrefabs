@@ -16,8 +16,8 @@
     <button onclick='uwwcOpen()' id='test' style="width: 20px; height: 20px;"></button>
 
 
-    <h1 id='title' class="title" style="display: none;">UWWC Inventory</h1>
-    <div class="row" style="display: none;">
+    <h1 id='title' class="title" >UWWC Inventory</h1>
+    <div class="row" >
     <table id="UWWC Steel Inventory" class="column" ">
         <thead>
           <tr>
@@ -60,16 +60,18 @@
       </table>
     </div>
 
-    <div id ="UWWCOpenCustomers">
+    <div id ="UWWCOpenCustomers" style="display: none;">
      
-      <table class="openCust">
+      <table id='UWWCtable' class="openCust">
         <ttitle class="title">UWWC Open Customer List</ttitle>
         <thead>
           <tr>
             <th scope="col" class="CustName">Name</th>
             <th scope="col"class="OrderStyle">Style</th>
+            <th scope="col"class="OrderSize">Size</th>
             <th scope="col"class="OrderQTY">Quantity</th>
             <th scope="col"class="OrderDate">Order Date</th>
+            <th scope="col"class="delivery">Delivery</th>
            </tr>
         </thead>
         <tbody>
