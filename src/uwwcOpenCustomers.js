@@ -1,118 +1,126 @@
 let currentCustomers = [];
 
 
-function display_UWWC_open_customers()
-{    restoreLocalCustomers()
-    document.getElementById('UWWCOpenCustomers').style.display = 'block';
-   let tableElements = document.getElementById('UWWCtable');
-    
-    let wells = currentCustomers[0]['Wells'];
-    
 
-    
-    
-   
-    
-    
-    for (const well in wells) {
-        let tableRow = document.createElement("tr");
-        tableElements.appendChild(tableRow);
-        let customerName = document.createElement("td");
-        customerName.classList.add("item-qty");
-        customerName.textContent = currentCustomers[0]['name'];
+
+function display_UWWC_open_customers() {
+  //getOpenOrders();
+  restoreLocalCustomers();
+  document.getElementById("UWWCOpenCustomers").style.display = "block";
+  let tableElements = document.getElementById("UWWCtable");
+
+  for (let i = 0; i < currentCustomers.length; i++) {
+    if (currentCustomers[i]["Franchise"] === "17") {
         
-        let sizeBox = document.createElement("td");
-        sizeBox.classList.add("item-qty");
-        let styleBox = document.createElement("td");
-        styleBox.classList.add("item-qty");
-        let orderDateBox = document.createElement("td");
-        orderDateBox.classList.add("item-qty");
-      let style = ''
-      if(wells[well]['Style'] === 0){
-      style = 'Steel'}
-      else
-      {
-          style = 'Clear'
+        let arr = [];
+        let wells = currentCustomers[i]["Wells"];
+       // console.log(Object.keys(wells).length)
+        
+      for (const well in wells) {
+       arr.push(wells[well])
+       
       }
-     
-     let size=  wells[well]['prefab_type'];
-     let orderDate = currentCustomers[0]['Date'];
-     
+      arr.sort(); 
+      console.log(arr)
+      var count = {};
+
+
       
-     orderDateBox.textContent = orderDate;
-     sizeBox.textContent = size;
-    styleBox.textContent = style;
-    let quantity = 1;
-    let quantityBox = document.createElement('td');
-    quantityBox.classList.add('item-qty');
-    quantityBox.textContent = quantity;
-    
-    let deliveryBox = document.createElement('td');
-    deliveryBox.classList.add('item-qty')
-    deliveryBox.textContent = currentCustomers[0]['prefab_select_delivery']
-
-tableRow.append(customerName,styleBox,sizeBox,quantityBox,orderDateBox,deliveryBox)
-
-     console.log(size);
+      console.log(counts)
     }
-    console.log(wells)
-    
-}
+     
+      // 
+      //      
+      //     
+      //  let tableRow = document.createElement("tr");
+      //  tableElements.appendChild(tableRow);
+      //  let customerName = document.createElement("td");
+      //  customerName.classList.add("item-qty");
+      //  customerName.textContent = currentCustomers[i]["name"];
+//
+      //  let sizeBox = document.createElement("td");
+      //  sizeBox.classList.add("item-qty");
+      //  let styleBox = document.createElement("td");
+      //  styleBox.classList.add("item-qty");
+      //  let orderDateBox = document.createElement("td");
+      //  orderDateBox.classList.add("item-qty");
+      //  let style = "";
+      //  if (wells[well]["Style"] === 0) {
+      //    style = "Steel";
+      //  } else {
+      //    style = "Clear";
+      //  }
+//
+      //  let size = wells[well]["prefab_type"];
+      //  let orderDate = currentCustomers[i]["Date"];
+//
+      //  orderDateBox.textContent = orderDate;
+      //  sizeBox.textContent = size;
+      //  styleBox.textContent = style;
+      //  let quantity = 1;
+      //  let quantityBox = document.createElement("td");
+      //  quantityBox.classList.add("item-qty");
+      //  quantityBox.textContent = quantity;
+//
+      //  let deliveryBox = document.createElement("td");
+      //  deliveryBox.classList.add("item-qty");
+      //  deliveryBox.textContent = currentCustomers[i]["prefab_select_delivery"];
+//
+      //  tableRow.append(
+      //    customerName,
+      //    styleBox,
+      //    sizeBox,
+      //    quantityBox,
+      //    orderDateBox,
+      //    deliveryBox
+      //  );
+//
+      //  console.log(size);
+      //}
+      //console.log(wells);
+    }
+  }
+//}
 
-
-
-
-
-
-
+//
 //async function getOpenOrders()
-//{   let date = new Date;
-//    date = date.toJSON().split('T')[0];
-//    let response = await fetch('crm28.  api)
-//    let data = await response.json()
+//{  // let date = new Date;
+//   // date = date.toJSON().split('T')[0];
+//    let response = await fetch('https://crm28.com/api/wells');
+//    let data = await response.json();
 //    for (let i = 0; i<100000;i++){
 //        let info3 = "";
-//        if (data[i] !== undefined && data[i]['Date'] === date && (data[i]['prefab_select_delivery'] === 'Deliver and Install' ||data[i]['prefab_select_delivery'] === 'Just Deliver' || data[i]['prefab_select_delivery'] === 'Customer Pickup'))
+//        if (data[i] !== undefined /*&& data[i]['Date'] === date */ && (data[i]['prefab_select_delivery'] === 'Deliver and Install' ||data[i]['prefab_select_delivery'] === 'Just Deliver' || data[i]['prefab_select_delivery'] === 'Customer Pickup'))
 //        {
-//        
+//
 //        info3 = data[i];
-//       
+//
 //       currentCustomers.push(info3);
-//       
+//
 //        saveLocalCustomers();
 //        }
 //      }
 //
 //}
-//getOpenOrders();
+//
 
-function saveLocalCustomers(){
-localStorage.setItem('PrefabCustomers',JSON.stringify(currentCustomers));
-console.log(currentCustomers);
+function saveLocalCustomers() {
+  localStorage.setItem("PrefabCustomers", JSON.stringify(currentCustomers));
+  console.log(currentCustomers);
 }
 
-function restoreLocalCustomers()
-{
-    currentCustomers = JSON.parse(localStorage.getItem('PrefabCustomers'));
-    if(currentCustomers === null)
-    currentCustomers = []
-    console.log(currentCustomers)
+function restoreLocalCustomers() {
+  currentCustomers = JSON.parse(localStorage.getItem("PrefabCustomers"));
+  if (currentCustomers === null) currentCustomers = [];
+  console.log(currentCustomers);
 }
 
-
-
-function wellInfo()
-{
- 
-
-}
+function wellInfo() {}
 
 //wellInfo();
 //getOpenOrders().then(data => console.log(data));
 
-
 export default display_UWWC_open_customers;
-
 
 /*
 This will need to be from an API call to CrmWells
